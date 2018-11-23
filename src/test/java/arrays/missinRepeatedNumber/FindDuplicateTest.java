@@ -16,6 +16,12 @@ class FindDuplicateTest {
 
     private FindDuplicate findDuplicate = new FindDuplicate();
 
+    @ParameterizedTest
+    @MethodSource("valuesProvider")
+    void main(List<Integer> list, int expectedRepeatedNumber) {
+        Assertions.assertEquals(findDuplicate.repeatedNumber(list), expectedRepeatedNumber);
+    }
+
     private static Stream<Arguments> valuesProvider() {
         return Stream.of(
                 Arguments.arguments(Collections.emptyList(), NO_REPEATED_NUMBER_VALUE),
@@ -26,11 +32,5 @@ class FindDuplicateTest {
                 Arguments.arguments(Arrays.asList(1, 2, 3, 4, 5, 6, 4, 5, 4), 4),
                 Arguments.arguments(Arrays.asList(5, 5, 5, 5), 5)
         );
-    }
-
-    @ParameterizedTest
-    @MethodSource("valuesProvider")
-    void main(List<Integer> list, int expectedRepeatedNumber) {
-        Assertions.assertEquals(findDuplicate.repeatedNumber(list), expectedRepeatedNumber);
     }
 }
