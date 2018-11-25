@@ -1,9 +1,5 @@
 package arrays.valueRanges;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.ToString;
-
 import java.util.ArrayList;
 
 public class MergeIntervals {
@@ -99,11 +95,4 @@ public class MergeIntervals {
         i = i - extraValue;
         return i;
     }
-}
-
-@AllArgsConstructor
-@ToString
-class Interval {
-    int start;
-    int end;
 }
