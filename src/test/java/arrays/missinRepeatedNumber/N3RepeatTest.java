@@ -9,9 +9,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static arrays.missinRepeatedNumber.N3Repeat.NO_REPEATED_NUMBER_VALUE;
-
-
 class N3RepeatTest {
     private N3Repeat n3Repeat = new N3Repeat();
 
@@ -23,9 +20,12 @@ class N3RepeatTest {
 
     private static Stream<Arguments> valuesProvider() {
         return Stream.of(
-                Arguments.arguments(NO_REPEATED_NUMBER_VALUE, Arrays.asList(1, 2, 3)),
+                Arguments.arguments(-1, Arrays.asList(1, 2, 3)),
                 Arguments.arguments(1, Arrays.asList(1, 2, 1)),
-                Arguments.arguments(1, Arrays.asList(1, 2, 3, 1, 1))
+                Arguments.arguments(1, Arrays.asList(1, 2, 3, 1, 1)),
+                Arguments.arguments(5, Arrays.asList(1, 2, 3, 4, 5, 1, 2, 3, 5, 5, 4, 5, 5)),
+                Arguments.arguments(5, Arrays.asList(1, 2, 5, 1, 2, 5, 5)),
+                Arguments.arguments(1, Arrays.asList(1, 2, 2, 3, 1, 1))
         );
     }
 }
